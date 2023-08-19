@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.xyz/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-light">
+
+    <!-- #region Navbar -->
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand brandGradient fs-4" href="dash.html">EMS2.0</a>
+            <!-- #region Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- #endregion Toggler -->
+            <div class="collapse navbar-collapse small" id="navbarSupportedContent">
+                <!-- #region Navbar Items -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="dash.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="employees.html">Employees</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="jobs.html">Jobs</a>
+                    </li>
+                </ul>
+                <form class="d-flex gap-3" role="search">
+                    <div class="input-group">
+                        <input type="search" class="form-control" placeholder="Search for...">
+                        <button class="btn btn-success" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                    <div class="vr text-white"></div>
+                    <button class="btn btn-warning" type="button">
+                        <a href="index.html" class="text-black"><i class="fa-solid fa-power-off"></i></a>
+                    </button>
+                </form>
+                <!-- #endregion Navbar Items -->
+            </div>
+        </div>
+    </nav>
+    <!-- #endregion Navbar -->
+
+    <!-- #region Page -->
+    <div class="container-fluid mt-4">
+        <div class="row justify-content-center gap-1">
+            <!-- #region List Group -->
+            <div class="col-md-2">
+                <ul class="list-group shadow small mb-3">
+                    <li class="list-group-item active" aria-current="true">Employee Data</li>
+                    <!-- Button trigger modal -->
+                    <a href="" class="list-group-item list-group-item-action list-group-item-light" data-bs-toggle="modal" data-bs-target="#addEmployeeModal">Add Employee</a>
+                </ul>
+                <ul class="list-group shadow small mb-3">
+                    <li class="list-group-item active" aria-current="true">Related Links</li>
+                    <a href="jobs.html" class="list-group-item list-group-item-action list-group-item-light">Jobs List</a>
+                </ul>
+            </div>
+            <!-- #endregion List Group -->
+
+            <!-- #region Tabel -->
+            <div class="col-md-8 table-responsive">
+                <table class="table table-sm table-bordered caption-top shadow">
+                    <caption class="text-bg-dark text-center rounded-top">Employees List</caption>
+                    <thead class="small table-secondary">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Employee ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email ID</th>
+                            <th scope="col">Details</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody class="small align-middle">
+                        <tr>
+                            <td>1</td>
+                            <td>641</td>
+                            <td>John Doe</td>
+                            <td>johndoe@gmail.com</td>
+                            <td><a href="" class="btn btn-sm btn-primary d-block" data-bs-toggle="modal" data-bs-target="#employeeDetailsModal-1">Details</a></td>
+                            <td><a href="" class="btn btn-sm btn-warning d-block" data-bs-toggle="modal" data-bs-target="#editEmployeeModal-1">Edit</a></td>
+                            <td><a href="" class="btn btn-sm btn-danger d-block" data-bs-toggle="modal" data-bs-target="#deleteEmployeeModal-1">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>767</td>
+                            <td>Jack William</td>
+                            <td>jackwilliam@gmail.com</td>
+                            <td><a href="" class="btn btn-sm btn-primary d-block" data-bs-toggle="modal" data-bs-target="#employeeDetailsModal-2">Details</a></td>
+                            <td><a href="" class="btn btn-sm btn-warning d-block" data-bs-toggle="modal" data-bs-target="#editEmployeeModal-2">Edit</a></td>
+                            <td><a href="" class="btn btn-sm btn-danger d-block" data-bs-toggle="modal" data-bs-target="#deleteEmployeeModal-2">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>854</td>
+                            <td>Thomas Oliver</td>
+                            <td>thomasoliver@gmail.com</td>
+                            <td><a href="" class="btn btn-sm btn-primary d-block" data-bs-toggle="modal" data-bs-target="#employeeDetailsModal-3">Details</a></td>
+                            <td><a href="" class="btn btn-sm btn-warning d-block" data-bs-toggle="modal" data-bs-target="#editEmployeeModal-3">Edit</a></td>
+                            <td><a href="" class="btn btn-sm btn-danger d-block" data-bs-toggle="modal" data-bs-target="#deleteEmployeeModal-3">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>622</td>
+                            <td>Gerard Umtiti</td>
+                            <td>gerardumtiti@gmail.com</td>
+                            <td><a href="" class="btn btn-sm btn-primary d-block" data-bs-toggle="modal" data-bs-target="#employeeDetailsModal-4">Details</a></td>
+                            <td><a href="" class="btn btn-sm btn-warning d-block" data-bs-toggle="modal" data-bs-target="#editEmployeeModal-4">Edit</a></td>
+                            <td><a href="" class="btn btn-sm btn-danger d-block" data-bs-toggle="modal" data-bs-target="#deleteEmployeeModal-4">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>315</td>
+                            <td>Samuel Alba</td>
+                            <td>samuelalba@gmail.com</td>
+                            <td><a href="" class="btn btn-sm btn-primary d-block" data-bs-toggle="modal" data-bs-target="#employeeDetailsModal-5">Details</a></td>
+                            <td><a href="" class="btn btn-sm btn-warning d-block" data-bs-toggle="modal" data-bs-target="#editEmployeeModal-5">Edit</a></td>
+                            <td><a href="" class="btn btn-sm btn-danger d-block" data-bs-toggle="modal" data-bs-target="#deleteEmployeeModal-5">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>143</td>
+                            <td>Junior Roberto</td>
+                            <td>juniorroberto@gmail.com</td>
+                            <td><a href="" class="btn btn-sm btn-primary d-block" data-bs-toggle="modal" data-bs-target="#employeeDetailsModal-6">Details</a></td>
+                            <td><a href="" class="btn btn-sm btn-warning d-block" data-bs-toggle="modal" data-bs-target="#editEmployeeModal-6">Edit</a></td>
+                            <td><a href="" class="btn btn-sm btn-danger d-block" data-bs-toggle="modal" data-bs-target="#deleteEmployeeModal-6">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>552</td>
+                            <td>Tony Varane</td>
+                            <td>tonyvarane@gmail.com</td>
+                            <td><a href="" class="btn btn-sm btn-primary d-block" data-bs-toggle="modal" data-bs-target="#employeeDetailsModal-7">Details</a></td>
+                            <td><a href="" class="btn btn-sm btn-warning d-block" data-bs-toggle="modal" data-bs-target="#editEmployeeModal-7">Edit</a></td>
+                            <td><a href="" class="btn btn-sm btn-danger d-block" data-bs-toggle="modal" data-bs-target="#deleteEmployeeModal-7">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>150</td>
+                            <td>Adrian Mindy</td>
+                            <td>adrianmindy@gmail.com</td>
+                            <td><a href="" class="btn btn-sm btn-primary d-block" data-bs-toggle="modal" data-bs-target="#employeeDetailsModal-8">Details</a></td>
+                            <td><a href="" class="btn btn-sm btn-warning d-block" data-bs-toggle="modal" data-bs-target="#editEmployeeModal-8">Edit</a></td>
+                            <td><a href="" class="btn btn-sm btn-danger d-block" data-bs-toggle="modal" data-bs-target="#deleteEmployeeModal-8">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>282</td>
+                            <td>Marco Junior</td>
+                            <td>marcojunior@gmail.com</td>
+                            <td><a href="" class="btn btn-sm btn-primary d-block" data-bs-toggle="modal" data-bs-target="#employeeDetailsModal-9">Details</a></td>
+                            <td><a href="" class="btn btn-sm btn-warning d-block" data-bs-toggle="modal" data-bs-target="#editEmployeeModal-9">Edit</a></td>
+                            <td><a href="" class="btn btn-sm btn-danger d-block" data-bs-toggle="modal" data-bs-target="#deleteEmployeeModal-9">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>367</td>
+                            <td>Eden Diaz</td>
+                            <td>edendiaz@gmail.com</td>
+                            <td><a href="" class="btn btn-sm btn-primary d-block" data-bs-toggle="modal" data-bs-target="#employeeDetailsModal-10">Details</a></td>
+                            <td><a href="" class="btn btn-sm btn-warning d-block" data-bs-toggle="modal" data-bs-target="#editEmployeeModal-10">Edit</a></td>
+                            <td><a href="" class="btn btn-sm btn-danger d-block" data-bs-toggle="modal" data-bs-target="#deleteEmployeeModal-10">Delete</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- #endregion Tabel -->
+        </div>
+    </div>
+    <!-- #endregion Page -->
+
+    <!-- #region Modal (Add Employee) -->
+    <div class="modal fade" id="addEmployeeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Add Employee Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body">
+                    <form>
+                        <!-- Date Input -->
+                        <div class="mb-3">
+                            <input type="date" class="form-control">
+                        </div>
+                        <!-- Name Input -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="First Name">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Last Name">
+                            </div>
+                        </div>
+                        <!-- Email & Phone Input -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="email" class="form-control" placeholder="Email ID">
+                            </div>
+                            <div class="col">
+                                <input type="tel" class="form-control" placeholder="Phone Number">
+                            </div>
+                        </div>
+                        <!-- Select Job Input -->
+                        <div class="mb-3">
+                            <select name="" id="" class="form-select">
+                                <option value="0" disabled selected>Select Job For Employee</option>
+                                <option value="1">Graphic Designer</option>
+                                <option value="2">Web Designer</option>
+                                <option value="3">Interior Designer</option>
+                                <option value="4">Web Developer</option>
+                                <option value="5">PHP Developer</option>
+                                <option value="6">Digital Marketer</option>
+                            </select>
+                        </div>
+                        <!-- Submit & Button -->
+                        <div class="d-flex gap-3">
+                            <button type="submit" class="btn btn-success flex-fill">Add Employee</button>
+                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- #endregion Body -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Add Employee) -->
+
+    
+    <!-- #region Modal (Employee Details-1) -->
+    <div class="modal fade" id="employeeDetailsModal-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Employee Details</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body p-0">
+                    <table class="table table-bordered small mb-0">
+                        <tbody class="align-middle">
+                            <tr>
+                                <th class="w-50">ID</th>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <th>Employee ID</th>
+                                <td>641</td>
+                            </tr>
+                            <tr>
+                                <th>First Name</th>
+                                <td>John</td>
+                            </tr>
+                            <tr>
+                                <th>Last Name</th>
+                                <td>Doe</td>
+                            </tr>
+                            <tr>
+                                <th>Email ID</th>
+                                <td>johndoe@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <th>Phone Number</th>
+                                <td>741852963</td>
+                            </tr>
+                            <tr>
+                                <th>Job</th>
+                                <td>Graphic Designer</td>
+                            </tr>
+                            <tr>
+                                <th>Joining Date</th>
+                                <td>22nd July, 2023</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- #endregion Body -->
+
+                <!-- #region Footer -->
+                <div class="modal-footer">
+                    <!-- Submit & Button -->
+                    <button type="submit" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editEmployeeModal-1">Edit Details</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+                <!-- #endregion Footer -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Employee Details-1) -->
+
+    <!-- #region Modal (Employee Details-2) -->
+    <div class="modal fade" id="employeeDetailsModal-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Employee Details</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body p-0">
+                    <table class="table table-bordered small mb-0">
+                        <tbody class="align-middle">
+                            <tr>
+                                <th class="w-50">ID</th>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <th>Employee ID</th>
+                                <td>767</td>
+                            </tr>
+                            <tr>
+                                <th>First Name</th>
+                                <td>Jack</td>
+                            </tr>
+                            <tr>
+                                <th>Last Name</th>
+                                <td>William</td>
+                            </tr>
+                            <tr>
+                                <th>Email ID</th>
+                                <td>jackwilliam@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <th>Phone Number</th>
+                                <td>719452264</td>
+                            </tr>
+                            <tr>
+                                <th>Job</th>
+                                <td>Web Developer</td>
+                            </tr>
+                            <tr>
+                                <th>Joining Date</th>
+                                <td>16nd May, 2023</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- #endregion Body -->
+
+                <!-- #region Footer -->
+                <div class="modal-footer">
+                    <!-- Submit & Button -->
+                    <button type="submit" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editEmployeeModal-2">Edit Details</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+                <!-- #endregion Footer -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Employee Details-2) -->
+
+    <!-- #region Modal (Employee Details-3) -->
+    <div class="modal fade" id="employeeDetailsModal-3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Employee Details</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body p-0">
+                    <table class="table table-bordered small mb-0">
+                        <tbody class="align-middle">
+                            <tr>
+                                <th class="w-50">ID</th>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <th>Employee ID</th>
+                                <td>854</td>
+                            </tr>
+                            <tr>
+                                <th>First Name</th>
+                                <td>Thomas</td>
+                            </tr>
+                            <tr>
+                                <th>Last Name</th>
+                                <td>Oliver</td>
+                            </tr>
+                            <tr>
+                                <th>Email ID</th>
+                                <td>thomasoliver@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <th>Phone Number</th>
+                                <td>519528369</td>
+                            </tr>
+                            <tr>
+                                <th>Job</th>
+                                <td>Web Designer</td>
+                            </tr>
+                            <tr>
+                                <th>Joining Date</th>
+                                <td>11nd March, 2023</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- #endregion Body -->
+
+                <!-- #region Footer -->
+                <div class="modal-footer">
+                    <!-- Submit & Button -->
+                    <button type="submit" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editEmployeeModal-3">Edit Details</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+                <!-- #endregion Footer -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Employee Details-3) -->
+
+    <!-- #region Modal (Employee Details-4) -->
+    <div class="modal fade" id="employeeDetailsModal-4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Employee Details</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body p-0">
+                    <table class="table table-bordered small mb-0">
+                        <tbody class="align-middle">
+                            <tr>
+                                <th class="w-50">ID</th>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <th>Employee ID</th>
+                                <td>622</td>
+                            </tr>
+                            <tr>
+                                <th>First Name</th>
+                                <td>Gerard</td>
+                            </tr>
+                            <tr>
+                                <th>Last Name</th>
+                                <td>Umtiti</td>
+                            </tr>
+                            <tr>
+                                <th>Email ID</th>
+                                <td>gerardumtiti@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <th>Phone Number</th>
+                                <td>597125013</td>
+                            </tr>
+                            <tr>
+                                <th>Job</th>
+                                <td>Digital Marketer</td>
+                            </tr>
+                            <tr>
+                                <th>Joining Date</th>
+                                <td>10nd November, 2023</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- #endregion Body -->
+
+                <!-- #region Footer -->
+                <div class="modal-footer">
+                    <!-- Submit & Button -->
+                    <button type="submit" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editEmployeeModal-4">Edit Details</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+                <!-- #endregion Footer -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Employee Details-4) -->
+
+    <!-- #region Modal (Employee Details-5) -->
+    <div class="modal fade" id="employeeDetailsModal-5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Employee Details</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body p-0">
+                    <table class="table table-bordered small mb-0">
+                        <tbody class="align-middle">
+                            <tr>
+                                <th class="w-50">ID</th>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <th>Employee ID</th>
+                                <td>315</td>
+                            </tr>
+                            <tr>
+                                <th>First Name</th>
+                                <td>Samuel</td>
+                            </tr>
+                            <tr>
+                                <th>Last Name</th>
+                                <td>Alba</td>
+                            </tr>
+                            <tr>
+                                <th>Email ID</th>
+                                <td>samuelalba@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <th>Phone Number</th>
+                                <td>396199251</td>
+                            </tr>
+                            <tr>
+                                <th>Job</th>
+                                <td>PHP Developer</td>
+                            </tr>
+                            <tr>
+                                <th>Joining Date</th>
+                                <td>2nd August, 2023</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- #endregion Body -->
+
+                <!-- #region Footer -->
+                <div class="modal-footer">
+                    <!-- Submit & Button -->
+                    <button type="submit" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editEmployeeModal-5">Edit Details</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+                <!-- #endregion Footer -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Employee Details-5) -->
+    
+    <!-- #region Modal (Employee Details-6) -->
+    <div class="modal fade" id="employeeDetailsModal-6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Employee Details</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body p-0">
+                    <table class="table table-bordered small mb-0">
+                        <tbody class="align-middle">
+                            <tr>
+                                <th class="w-50">ID</th>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <th>Employee ID</th>
+                                <td>143</td>
+                            </tr>
+                            <tr>
+                                <th>First Name</th>
+                                <td>Junior</td>
+                            </tr>
+                            <tr>
+                                <th>Last Name</th>
+                                <td>Roberto</td>
+                            </tr>
+                            <tr>
+                                <th>Email ID</th>
+                                <td>juniorroberto@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <th>Phone Number</th>
+                                <td>419553862</td>
+                            </tr>
+                            <tr>
+                                <th>Job</th>
+                                <td>Interior Designer</td>
+                            </tr>
+                            <tr>
+                                <th>Joining Date</th>
+                                <td>18nd October, 2023</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- #endregion Body -->
+
+                <!-- #region Footer -->
+                <div class="modal-footer">
+                    <!-- Submit & Button -->
+                    <button type="submit" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editEmployeeModal-6">Edit Details</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+                <!-- #endregion Footer -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Employee Details-6) -->
+
+    <!-- #region Modal (Employee Details-7) -->
+    <div class="modal fade" id="employeeDetailsModal-7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Employee Details</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body p-0">
+                    <table class="table table-bordered small mb-0">
+                        <tbody class="align-middle">
+                            <tr>
+                                <th class="w-50">ID</th>
+                                <td>7</td>
+                            </tr>
+                            <tr>
+                                <th>Employee ID</th>
+                                <td>552</td>
+                            </tr>
+                            <tr>
+                                <th>First Name</th>
+                                <td>Tony</td>
+                            </tr>
+                            <tr>
+                                <th>Last Name</th>
+                                <td>Varane</td>
+                            </tr>
+                            <tr>
+                                <th>Email ID</th>
+                                <td>tonyvarane@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <th>Phone Number</th>
+                                <td>295311057</td>
+                            </tr>
+                            <tr>
+                                <th>Job</th>
+                                <td>Web Developer</td>
+                            </tr>
+                            <tr>
+                                <th>Joining Date</th>
+                                <td>28nd June, 2023</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- #endregion Body -->
+
+                <!-- #region Footer -->
+                <div class="modal-footer">
+                    <!-- Submit & Button -->
+                    <button type="submit" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editEmployeeModal-7">Edit Details</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+                <!-- #endregion Footer -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Employee Details-7) -->
+
+    <!-- #region Modal (Employee Details-8) -->
+    <div class="modal fade" id="employeeDetailsModal-8" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Employee Details</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body p-0">
+                    <table class="table table-bordered small mb-0">
+                        <tbody class="align-middle">
+                            <tr>
+                                <th class="w-50">ID</th>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <th>Employee ID</th>
+                                <td>150</td>
+                            </tr>
+                            <tr>
+                                <th>First Name</th>
+                                <td>Adrian</td>
+                            </tr>
+                            <tr>
+                                <th>Last Name</th>
+                                <td>Mindy</td>
+                            </tr>
+                            <tr>
+                                <th>Email ID</th>
+                                <td>adrianmindy@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <th>Phone Number</th>
+                                <td>846126910</td>
+                            </tr>
+                            <tr>
+                                <th>Job</th>
+                                <td>Graphic Designer</td>
+                            </tr>
+                            <tr>
+                                <th>Joining Date</th>
+                                <td>8nd December, 2023</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- #endregion Body -->
+
+                <!-- #region Footer -->
+                <div class="modal-footer">
+                    <!-- Submit & Button -->
+                    <button type="submit" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editEmployeeModal-8">Edit Details</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+                <!-- #endregion Footer -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Employee Details-8) -->
+
+    <!-- #region Modal (Employee Details-9) -->
+    <div class="modal fade" id="employeeDetailsModal-9" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Employee Details</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body p-0">
+                    <table class="table table-bordered small mb-0">
+                        <tbody class="align-middle">
+                            <tr>
+                                <th class="w-50">ID</th>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <th>Employee ID</th>
+                                <td>282</td>
+                            </tr>
+                            <tr>
+                                <th>First Name</th>
+                                <td>Marco</td>
+                            </tr>
+                            <tr>
+                                <th>Last Name</th>
+                                <td>Junior</td>
+                            </tr>
+                            <tr>
+                                <th>Email ID</th>
+                                <td>marcojunior@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <th>Phone Number</th>
+                                <td>688371093</td>
+                            </tr>
+                            <tr>
+                                <th>Job</th>
+                                <td>Web Designer</td>
+                            </tr>
+                            <tr>
+                                <th>Joining Date</th>
+                                <td>5nd August, 2023</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- #endregion Body -->
+
+                <!-- #region Footer -->
+                <div class="modal-footer">
+                    <!-- Submit & Button -->
+                    <button type="submit" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editEmployeeModal-9">Edit Details</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+                <!-- #endregion Footer -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Employee Details-9) -->
+
+    <!-- #region Modal (Employee Details-10) -->
+    <div class="modal fade" id="employeeDetailsModal-10" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Employee Details</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body p-0">
+                    <table class="table table-bordered small mb-0">
+                        <tbody class="align-middle">
+                            <tr>
+                                <th class="w-50">ID</th>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <th>Employee ID</th>
+                                <td>367</td>
+                            </tr>
+                            <tr>
+                                <th>First Name</th>
+                                <td>Eden</td>
+                            </tr>
+                            <tr>
+                                <th>Last Name</th>
+                                <td>Diaz</td>
+                            </tr>
+                            <tr>
+                                <th>Email ID</th>
+                                <td>edendiaz@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <th>Phone Number</th>
+                                <td>708116839</td>
+                            </tr>
+                            <tr>
+                                <th>Job</th>
+                                <td>Web Developer</td>
+                            </tr>
+                            <tr>
+                                <th>Joining Date</th>
+                                <td>19nd February, 2023</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- #endregion Body -->
+
+                <!-- #region Footer -->
+                <div class="modal-footer">
+                    <!-- Submit & Button -->
+                    <button type="submit" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editEmployeeModal-10">Edit Details</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+                <!-- #endregion Footer -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Employee Details-10) -->
+
+
+    <!-- #region Modal (Edit Employee-1) -->
+    <div class="modal fade" id="editEmployeeModal-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Employee Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body">
+                    <form>
+                        <!-- Date Input -->
+                        <div class="mb-3">
+                            <input type="date" class="form-control" value="2009-12-09">
+                        </div>
+                        <!-- Name Input -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="First Name" value="John">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Last Name" value="Doe">
+                            </div>
+                        </div>
+                        <!-- Email & Phone Input -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="email" class="form-control" placeholder="Email ID" value="johndoe@gmail.com">
+                            </div>
+                            <div class="col">
+                                <input type="tel" class="form-control" placeholder="Phone Number" value="741852963">
+                            </div>
+                        </div>
+                        <!-- Select Job Input -->
+                        <div class="mb-3">
+                            <select class="form-select">
+                                <option value="0" disabled>Select Job For Employee</option>
+                                <option value="1" selected>Graphic Designer</option>
+                                <option value="2">Web Designer</option>
+                                <option value="3">Interior Designer</option>
+                                <option value="4">Web Developer</option>
+                                <option value="5">PHP Developer</option>
+                                <option value="6">Digital Marketer</option>
+                            </select>
+                        </div>
+                        <!-- Submit & Button -->
+                        <div class="d-flex gap-3">
+                            <button type="submit" class="btn btn-success flex-fill">Update Employee</button>
+                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Discard</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- #endregion Body -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Edit Employee-1) -->
+
+    <!-- #region Modal (Edit Employee-2) -->
+    <div class="modal fade" id="editEmployeeModal-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Employee Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body">
+                    <form>
+                        <!-- Date Input -->
+                        <div class="mb-3">
+                            <input type="date" class="form-control" value="2007-05-16">
+                        </div>
+                        <!-- Name Input -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="First Name" value="Jack">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Last Name" value="William">
+                            </div>
+                        </div>
+                        <!-- Email & Phone Input -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="email" class="form-control" placeholder="Email ID" value="jackwilliam@gmail.com">
+                            </div>
+                            <div class="col">
+                                <input type="tel" class="form-control" placeholder="Phone Number" value="719452264">
+                            </div>
+                        </div>
+                        <!-- Select Job Input -->
+                        <div class="mb-3">
+                            <select class="form-select">
+                                <option value="0" disabled>Select Job For Employee</option>
+                                <option value="1">Graphic Designer</option>
+                                <option value="2">Web Designer</option>
+                                <option value="3">Interior Designer</option>
+                                <option value="4" selected>Web Developer</option>
+                                <option value="5">PHP Developer</option>
+                                <option value="6">Digital Marketer</option>
+                            </select>
+                        </div>
+                        <!-- Submit & Button -->
+                        <div class="d-flex gap-3">
+                            <button type="submit" class="btn btn-success flex-fill">Update Employee</button>
+                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Discard</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- #endregion Body -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Edit Employee-2) -->
+
+    <!-- #region Modal (Edit Employee-3) -->
+    <div class="modal fade" id="editEmployeeModal-3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Employee Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body">
+                    <form>
+                        <!-- Date Input -->
+                        <div class="mb-3">
+                            <input type="date" class="form-control" value="2004-09-22">
+                        </div>
+                        <!-- Name Input -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="First Name" value="Thomas">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Last Name" value="Oliver">
+                            </div>
+                        </div>
+                        <!-- Email & Phone Input -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="email" class="form-control" placeholder="Email ID" value="thomasoliver@gmail.com">
+                            </div>
+                            <div class="col">
+                                <input type="tel" class="form-control" placeholder="Phone Number" value="519528369">
+                            </div>
+                        </div>
+                        <!-- Select Job Input -->
+                        <div class="mb-3">
+                            <select class="form-select">
+                                <option value="0" disabled>Select Job For Employee</option>
+                                <option value="1">Graphic Designer</option>
+                                <option value="2" selected>Web Designer</option>
+                                <option value="3">Interior Designer</option>
+                                <option value="4">Web Developer</option>
+                                <option value="5">PHP Developer</option>
+                                <option value="6">Digital Marketer</option>
+                            </select>
+                        </div>
+                        <!-- Submit & Button -->
+                        <div class="d-flex gap-3">
+                            <button type="submit" class="btn btn-success flex-fill">Update Employee</button>
+                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Discard</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- #endregion Body -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Edit Employee-3) -->
+
+    <!-- #region Modal (Edit Employee-4) -->
+    <div class="modal fade" id="editEmployeeModal-4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Employee Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body">
+                    <form>
+                        <!-- Date Input -->
+                        <div class="mb-3">
+                            <input type="date" class="form-control" value="2008-10-23">
+                        </div>
+                        <!-- Name Input -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="First Name" value="Gerard">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Last Name" value="Umtiti">
+                            </div>
+                        </div>
+                        <!-- Email & Phone Input -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="email" class="form-control" placeholder="Email ID" value="gerardumtiti@gmail.com">
+                            </div>
+                            <div class="col">
+                                <input type="tel" class="form-control" placeholder="Phone Number" value="597125013">
+                            </div>
+                        </div>
+                        <!-- Select Job Input -->
+                        <div class="mb-3">
+                            <select class="form-select">
+                                <option value="0" disabled>Select Job For Employee</option>
+                                <option value="1">Graphic Designer</option>
+                                <option value="2">Web Designer</option>
+                                <option value="3">Interior Designer</option>
+                                <option value="4">Web Developer</option>
+                                <option value="5">PHP Developer</option>
+                                <option value="6" selected>Digital Marketer</option>
+                            </select>
+                        </div>
+                        <!-- Submit & Button -->
+                        <div class="d-flex gap-3">
+                            <button type="submit" class="btn btn-success flex-fill">Update Employee</button>
+                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Discard</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- #endregion Body -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Edit Employee-4) -->
+
+    <!-- #region Modal (Edit Employee-5) -->
+    <div class="modal fade" id="editEmployeeModal-5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Employee Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body">
+                    <form>
+                        <!-- Date Input -->
+                        <div class="mb-3">
+                            <input type="date" class="form-control" value="2005-02-19">
+                        </div>
+                        <!-- Name Input -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="First Name" value="Samuel">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Last Name" value="Alba">
+                            </div>
+                        </div>
+                        <!-- Email & Phone Input -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="email" class="form-control" placeholder="Email ID" value="samuelalba@gmail.com">
+                            </div>
+                            <div class="col">
+                                <input type="tel" class="form-control" placeholder="Phone Number" value="396199251">
+                            </div>
+                        </div>
+                        <!-- Select Job Input -->
+                        <div class="mb-3">
+                            <select class="form-select">
+                                <option value="0" disabled>Select Job For Employee</option>
+                                <option value="1">Graphic Designer</option>
+                                <option value="2">Web Designer</option>
+                                <option value="3">Interior Designer</option>
+                                <option value="4">Web Developer</option>
+                                <option value="5" selected>PHP Developer</option>
+                                <option value="6">Digital Marketer</option>
+                            </select>
+                        </div>
+                        <!-- Submit & Button -->
+                        <div class="d-flex gap-3">
+                            <button type="submit" class="btn btn-success flex-fill">Update Employee</button>
+                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Discard</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- #endregion Body -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Edit Employee-5) -->
+
+    <!-- #region Modal (Edit Employee-6) -->
+    <div class="modal fade" id="editEmployeeModal-6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Employee Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body">
+                    <form>
+                        <!-- Date Input -->
+                        <div class="mb-3">
+                            <input type="date" class="form-control" value="2006-06-26">
+                        </div>
+                        <!-- Name Input -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="First Name" value="Junior">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Last Name" value="Roberto">
+                            </div>
+                        </div>
+                        <!-- Email & Phone Input -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="email" class="form-control" placeholder="Email ID" value="juniorroberto@gmail.com">
+                            </div>
+                            <div class="col">
+                                <input type="tel" class="form-control" placeholder="Phone Number" value="419553862">
+                            </div>
+                        </div>
+                        <!-- Select Job Input -->
+                        <div class="mb-3">
+                            <select class="form-select">
+                                <option value="0" disabled>Select Job For Employee</option>
+                                <option value="1">Graphic Designer</option>
+                                <option value="2">Web Designer</option>
+                                <option value="3" selected>Interior Designer</option>
+                                <option value="4">Web Developer</option>
+                                <option value="5">PHP Developer</option>
+                                <option value="6">Digital Marketer</option>
+                            </select>
+                        </div>
+                        <!-- Submit & Button -->
+                        <div class="d-flex gap-3">
+                            <button type="submit" class="btn btn-success flex-fill">Update Employee</button>
+                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Discard</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- #endregion Body -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Edit Employee-6) -->
+
+    <!-- #region Modal (Edit Employee-7) -->
+    <div class="modal fade" id="editEmployeeModal-7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Employee Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body">
+                    <form>
+                        <!-- Date Input -->
+                        <div class="mb-3">
+                            <input type="date" class="form-control" value="2007-08-11">
+                        </div>
+                        <!-- Name Input -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="First Name" value="Tony">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Last Name" value="Varane">
+                            </div>
+                        </div>
+                        <!-- Email & Phone Input -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="email" class="form-control" placeholder="Email ID" value="tonyvarane@gmail.com">
+                            </div>
+                            <div class="col">
+                                <input type="tel" class="form-control" placeholder="Phone Number" value="295311057">
+                            </div>
+                        </div>
+                        <!-- Select Job Input -->
+                        <div class="mb-3">
+                            <select class="form-select">
+                                <option value="0" disabled>Select Job For Employee</option>
+                                <option value="1">Graphic Designer</option>
+                                <option value="2">Web Designer</option>
+                                <option value="3">Interior Designer</option>
+                                <option value="4" selected>Web Developer</option>
+                                <option value="5">PHP Developer</option>
+                                <option value="6">Digital Marketer</option>
+                            </select>
+                        </div>
+                        <!-- Submit & Button -->
+                        <div class="d-flex gap-3">
+                            <button type="submit" class="btn btn-success flex-fill">Update Employee</button>
+                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Discard</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- #endregion Body -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Edit Employee-7) -->
+
+    <!-- #region Modal (Edit Employee-8) -->
+    <div class="modal fade" id="editEmployeeModal-8" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Employee Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body">
+                    <form>
+                        <!-- Date Input -->
+                        <div class="mb-3">
+                            <input type="date" class="form-control" value="2005-07-21">
+                        </div>
+                        <!-- Name Input -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="First Name" value="Adrian">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Last Name" value="Mindy">
+                            </div>
+                        </div>
+                        <!-- Email & Phone Input -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="email" class="form-control" placeholder="Email ID" value="adrianmindy@gmail.com">
+                            </div>
+                            <div class="col">
+                                <input type="tel" class="form-control" placeholder="Phone Number" value="846126910">
+                            </div>
+                        </div>
+                        <!-- Select Job Input -->
+                        <div class="mb-3">
+                            <select class="form-select">
+                                <option value="0" disabled>Select Job For Employee</option>
+                                <option value="1" selected>Graphic Designer</option>
+                                <option value="2">Web Designer</option>
+                                <option value="3">Interior Designer</option>
+                                <option value="4">Web Developer</option>
+                                <option value="5">PHP Developer</option>
+                                <option value="6">Digital Marketer</option>
+                            </select>
+                        </div>
+                        <!-- Submit & Button -->
+                        <div class="d-flex gap-3">
+                            <button type="submit" class="btn btn-success flex-fill">Update Employee</button>
+                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Discard</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- #endregion Body -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Edit Employee-8) -->
+
+    <!-- #region Modal (Edit Employee-9) -->
+    <div class="modal fade" id="editEmployeeModal-9" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Employee Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body">
+                    <form>
+                        <!-- Date Input -->
+                        <div class="mb-3">
+                            <input type="date" class="form-control" value="2010-03-15">
+                        </div>
+                        <!-- Name Input -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="First Name" value="Marco">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Last Name" value="Junior">
+                            </div>
+                        </div>
+                        <!-- Email & Phone Input -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="email" class="form-control" placeholder="Email ID" value="marcojunior@gmail.com">
+                            </div>
+                            <div class="col">
+                                <input type="tel" class="form-control" placeholder="Phone Number" value="688371093">
+                            </div>
+                        </div>
+                        <!-- Select Job Input -->
+                        <div class="mb-3">
+                            <select class="form-select">
+                                <option value="0" disabled>Select Job For Employee</option>
+                                <option value="1">Graphic Designer</option>
+                                <option value="2" selected>Web Designer</option>
+                                <option value="3">Interior Designer</option>
+                                <option value="4">Web Developer</option>
+                                <option value="5">PHP Developer</option>
+                                <option value="6">Digital Marketer</option>
+                            </select>
+                        </div>
+                        <!-- Submit & Button -->
+                        <div class="d-flex gap-3">
+                            <button type="submit" class="btn btn-success flex-fill">Update Employee</button>
+                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Discard</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- #endregion Body -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Edit Employee-9) -->
+
+    <!-- #region Modal (Edit Employee-10) -->
+    <div class="modal fade" id="editEmployeeModal-10" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Employee Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body">
+                    <form>
+                        <!-- Date Input -->
+                        <div class="mb-3">
+                            <input type="date" class="form-control" value="2008-09-20">
+                        </div>
+                        <!-- Name Input -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="First Name" value="Eden">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Last Name" value="Diaz">
+                            </div>
+                        </div>
+                        <!-- Email & Phone Input -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="email" class="form-control" placeholder="Email ID" value="edendiaz@gmail.com">
+                            </div>
+                            <div class="col">
+                                <input type="tel" class="form-control" placeholder="Phone Number" value="708116839">
+                            </div>
+                        </div>
+                        <!-- Select Job Input -->
+                        <div class="mb-3">
+                            <select class="form-select">
+                                <option value="0" disabled>Select Job For Employee</option>
+                                <option value="1">Graphic Designer</option>
+                                <option value="2">Web Designer</option>
+                                <option value="3">Interior Designer</option>
+                                <option value="4" selected>Web Developer</option>
+                                <option value="5">PHP Developer</option>
+                                <option value="6">Digital Marketer</option>
+                            </select>
+                        </div>
+                        <!-- Submit & Button -->
+                        <div class="d-flex gap-3">
+                            <button type="submit" class="btn btn-success flex-fill">Update Employee</button>
+                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Discard</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- #endregion Body -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Edit Employee-10) -->
+
+
+    <!-- #region Modal (Delete Employee-1) -->
+    <div class="modal fade" id="deleteEmployeeModal-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header">
+                    <label class="modal-title fs-5 fw-light text-center">Do you want to delete <b>"John Doe"</b> ?</label>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <form>
+                    <!-- #region Footer -->
+                    <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-danger">YES</button>
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Nope, Go back</button>
+                    </div>
+                    <!-- #endregion Footer -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Delete Employee-1) -->
+
+    <!-- #region Modal (Delete Employee-2) -->
+    <div class="modal fade" id="deleteEmployeeModal-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header">
+                    <label class="modal-title fs-5 fw-light text-center">Do you want to delete <b>"Jack William"</b> ?</label>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <form>
+                    <!-- #region Footer -->
+                    <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-danger">YES</button>
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Nope, Go back</button>
+                    </div>
+                    <!-- #endregion Footer -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Delete Employee-2) -->
+
+    <!-- #region Modal (Delete Employee-3) -->
+    <div class="modal fade" id="deleteEmployeeModal-3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header">
+                    <label class="modal-title fs-5 fw-light text-center">Do you want to delete <b>"Thomas Oliver"</b> ?</label>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <form>
+                    <!-- #region Footer -->
+                    <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-danger">YES</button>
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Nope, Go back</button>
+                    </div>
+                    <!-- #endregion Footer -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Delete Employee-3) -->
+
+    <!-- #region Modal (Delete Employee-4) -->
+    <div class="modal fade" id="deleteEmployeeModal-4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header">
+                    <label class="modal-title fs-5 fw-light text-center">Do you want to delete <b>"Gerard Umtiti"</b> ?</label>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <form>
+                    <!-- #region Footer -->
+                    <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-danger">YES</button>
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Nope, Go back</button>
+                    </div>
+                    <!-- #endregion Footer -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Delete Employee-4) -->
+
+    <!-- #region Modal (Delete Employee-5) -->
+    <div class="modal fade" id="deleteEmployeeModal-5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header">
+                    <label class="modal-title fs-5 fw-light text-center">Do you want to delete <b>"Samuel Alba"</b> ?</label>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <form>
+                    <!-- #region Footer -->
+                    <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-danger">YES</button>
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Nope, Go back</button>
+                    </div>
+                    <!-- #endregion Footer -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Delete Employee-5) -->
+
+    <!-- #region Modal (Delete Employee-6) -->
+    <div class="modal fade" id="deleteEmployeeModal-6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header">
+                    <label class="modal-title fs-5 fw-light text-center">Do you want to delete <b>"Junior Roberto"</b> ?</label>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <form>
+                    <!-- #region Footer -->
+                    <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-danger">YES</button>
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Nope, Go back</button>
+                    </div>
+                    <!-- #endregion Footer -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Delete Employee-6) -->
+
+    <!-- #region Modal (Delete Employee-7) -->
+    <div class="modal fade" id="deleteEmployeeModal-7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header">
+                    <label class="modal-title fs-5 fw-light text-center">Do you want to delete <b>"Tony Varane"</b> ?</label>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <form>
+                    <!-- #region Footer -->
+                    <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-danger">YES</button>
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Nope, Go back</button>
+                    </div>
+                    <!-- #endregion Footer -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Delete Employee-7) -->
+
+    <!-- #region Modal (Delete Employee-8) -->
+    <div class="modal fade" id="deleteEmployeeModal-8" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header">
+                    <label class="modal-title fs-5 fw-light text-center">Do you want to delete <b>"Adrian Mindy"</b> ?</label>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <form>
+                    <!-- #region Footer -->
+                    <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-danger">YES</button>
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Nope, Go back</button>
+                    </div>
+                    <!-- #endregion Footer -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Delete Employee-8) -->
+
+    <!-- #region Modal (Delete Employee-9) -->
+    <div class="modal fade" id="deleteEmployeeModal-9" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header">
+                    <label class="modal-title fs-5 fw-light text-center">Do you want to delete <b>"Marco Junior"</b> ?</label>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <form>
+                    <!-- #region Footer -->
+                    <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-danger">YES</button>
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Nope, Go back</button>
+                    </div>
+                    <!-- #endregion Footer -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Delete Employee-9) -->
+
+    <!-- #region Modal (Delete Employee-10) -->
+    <div class="modal fade" id="deleteEmployeeModal-10" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header">
+                    <label class="modal-title fs-5 fw-light text-center">Do you want to delete <b>"Eden Diaz"</b> ?</label>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <form>
+                    <!-- #region Footer -->
+                    <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-danger">YES</button>
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Nope, Go back</button>
+                    </div>
+                    <!-- #endregion Footer -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Delete Employee-10) -->
+
+    <script src="https://cdn.jsdelivr.xyz/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

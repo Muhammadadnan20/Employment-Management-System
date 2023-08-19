@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.xyz/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-light">
+    
+    <!-- #region Card -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4 mt-5">
+                <div class="card shadow-lg bg-white rounded">
+                    <div class="card-header text-bg-primary">Login as admin</div>
+                    <div class="card-body">
+                        <form action="dash.html">
+                            <!-- User Name -->
+                            <div class="form-floating mb-3 mt-2">
+                                <input type="text" id="userName" class="form-control" placeholder="" autofocus>
+                                <label for="userName">Username</label>
+                            </div>
+                             <!-- Password -->
+                            <div class="form-floating mb-3">
+                                <input type="password" id="password" class="form-control" placeholder="">
+                                <label for="password">Password</label>
+                            </div>
+                             <!-- Remember Me -->
+                            <div class="form-check mb-3">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label for="rememberMe">Remember me</label>
+                            </div>
+                             <!-- Login Button -->
+                             <div class="d-grid">
+                                <button type="submit" class="btn btn-success w-100"><i class="fa-solid fa-right-to-bracket"></i>&nbsp; Login as admin</button>
+                             </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Card -->
+
+    <script src="https://cdn.jsdelivr.xyz/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

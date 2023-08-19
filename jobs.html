@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.xyz/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-light">
+
+    <!-- #region Navbar -->
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand brandGradient fs-4" href="dash.html">EMS2.0</a>
+            <!-- #region Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- #endregion Toggler -->
+            <div class="collapse navbar-collapse small" id="navbarSupportedContent">
+                <!-- #region Navbar Items -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="dash.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="employees.html">Employees</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="jobs.html">Jobs</a>
+                    </li>
+                </ul>
+                <form class="d-flex gap-3" role="search">
+                    <div class="input-group">
+                        <input type="search" class="form-control" placeholder="Search for...">
+                        <button class="btn btn-success" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                    <div class="vr text-white"></div>
+                    <button class="btn btn-warning" type="button">
+                        <a href="index.html" class="text-black"><i class="fa-solid fa-power-off"></i></a>
+                    </button>
+                </form>
+                <!-- #endregion Navbar Items -->
+            </div>
+        </div>
+    </nav>
+    <!-- #endregion Navbar -->
+
+    <!-- #region Page -->
+    <div class="container-fluid mt-4">
+        <div class="row justify-content-center gap-1">
+            <!-- #region List Group -->
+            <div class="col-md-2">
+                <ul class="list-group shadow small mb-3">
+                    <li class="list-group-item active" aria-current="true">Jobs Data</li>
+                    <!-- Button trigger modal -->
+                    <a href="" class="list-group-item list-group-item-action list-group-item-light" data-bs-toggle="modal" data-bs-target="#addJobModal">Add Job</a>
+                </ul>
+                <ul class="list-group shadow small mb-3">
+                    <li class="list-group-item active" aria-current="true">Related Links</li>
+                    <a href="employees.html" class="list-group-item list-group-item-action list-group-item-light">Employees List</a>
+                </ul>
+            </div>
+            <!-- #endregion List Group -->
+
+            <!-- #region Tabel -->
+            <div class="col-md-8 table-responsive">
+                <table class="table table-sm table-bordered shadow caption-top">
+                    <caption class="text-bg-dark text-center rounded-top">Jobs List</caption>
+                    <thead class="small table-secondary">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Job Name</th>
+                            <th scope="col">Details</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody class="small align-middle">
+                        <tr>
+                            <td>1</td>
+                            <td>Graphic Designer</td>
+                            <td><a href="" class="btn btn-sm btn-primary d-block" data-bs-toggle="modal" data-bs-target="#jobDetailsModal-1">Details</a></td>
+                            <td><a href="" class="btn btn-sm btn-warning d-block" data-bs-toggle="modal" data-bs-target="#editJobModal-1">Edit</a></td>
+                            <td><a href="" class="btn btn-sm btn-danger d-block" data-bs-toggle="modal" data-bs-target="#deleteJobModal-1">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Web Designer</td>
+                            <td><a href="" class="btn btn-sm btn-primary d-block" data-bs-toggle="modal" data-bs-target="#jobDetailsModal-2">Details</a></td>
+                            <td><a href="" class="btn btn-sm btn-warning d-block" data-bs-toggle="modal" data-bs-target="#editJobModal-2">Edit</a></td>
+                            <td><a href="" class="btn btn-sm btn-danger d-block" data-bs-toggle="modal" data-bs-target="#deleteJobModal-2">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Interior Designer</td>
+                            <td><a href="" class="btn btn-sm btn-primary d-block" data-bs-toggle="modal" data-bs-target="#jobDetailsModal-3">Details</a></td>
+                            <td><a href="" class="btn btn-sm btn-warning d-block" data-bs-toggle="modal" data-bs-target="#editJobModal-3">Edit</a></td>
+                            <td><a href="" class="btn btn-sm btn-danger d-block" data-bs-toggle="modal" data-bs-target="#deleteJobModal-3">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Web Developer</td>
+                            <td><a href="" class="btn btn-sm btn-primary d-block" data-bs-toggle="modal" data-bs-target="#jobDetailsModal-4">Details</a></td>
+                            <td><a href="" class="btn btn-sm btn-warning d-block" data-bs-toggle="modal" data-bs-target="#editJobModal-4">Edit</a></td>
+                            <td><a href="" class="btn btn-sm btn-danger d-block" data-bs-toggle="modal" data-bs-target="#deleteJobModal-4">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>PHP Developer</td>
+                            <td><a href="" class="btn btn-sm btn-primary d-block" data-bs-toggle="modal" data-bs-target="#jobDetailsModal-5">Details</a></td>
+                            <td><a href="" class="btn btn-sm btn-warning d-block" data-bs-toggle="modal" data-bs-target="#editJobModal-5">Edit</a></td>
+                            <td><a href="" class="btn btn-sm btn-danger d-block" data-bs-toggle="modal" data-bs-target="#deleteJobModal-5">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Digital Marketer</td>
+                            <td><a href="" class="btn btn-sm btn-primary d-block" data-bs-toggle="modal" data-bs-target="#jobDetailsModal-6">Details</a></td>
+                            <td><a href="" class="btn btn-sm btn-warning d-block" data-bs-toggle="modal" data-bs-target="#editJobModal-6">Edit</a></td>
+                            <td><a href="" class="btn btn-sm btn-danger d-block" data-bs-toggle="modal" data-bs-target="#deleteJobModal-6">Delete</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- #endregion Tabel -->
+        </div>
+    </div>
+    <!-- #endregion Page -->
+
+    <!-- #region Modal (Add Job) -->
+    <div class="modal fade" id="addJobModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Add Job Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body">
+                    <form>
+                        <!-- Date Input -->
+                        <div class="mb-3">
+                            <input type="date" class="form-control">
+                        </div>
+                        <!-- Job Name Input -->
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Job Name">
+                        </div>
+                        <!-- Submit & Button -->
+                        <div class="d-flex gap-3">
+                            <button type="submit" class="btn btn-success flex-fill">Add Job</button>
+                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- #endregion Body -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Add Job) -->
+
+
+    <!-- #region Modal (Job Details-1) -->
+    <div class="modal fade" id="jobDetailsModal-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Job Details</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body p-0">
+                    <table class="table table-bordered small mb-0">
+                        <tbody class="align-middle">
+                            <tr>
+                                <th class="w-50">ID</th>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <th>Job Name</th>
+                                <td>Graphic Designer</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- #endregion Body -->
+
+                <!-- #region Footer -->
+                <div class="modal-footer">
+                    <!-- Submit & Button -->
+                    <button type="submit" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editJobModal-1">Edit Details</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+                <!-- #endregion Footer -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Job Details-1) -->
+
+    <!-- #region Modal (Job Details-2) -->
+    <div class="modal fade" id="jobDetailsModal-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Job Details</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body p-0">
+                    <table class="table table-bordered small mb-0">
+                        <tbody class="align-middle">
+                            <tr>
+                                <th class="w-50">ID</th>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <th>Job Name</th>
+                                <td>Web Designer</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- #endregion Body -->
+
+                <!-- #region Footer -->
+                <div class="modal-footer">
+                    <!-- Submit & Button -->
+                    <button type="submit" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editJobModal-2">Edit Details</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+                <!-- #endregion Footer -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Job Details-2) -->
+
+    <!-- #region Modal (Job Details-3) -->
+    <div class="modal fade" id="jobDetailsModal-3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Job Details</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body p-0">
+                    <table class="table table-bordered small mb-0">
+                        <tbody class="align-middle">
+                            <tr>
+                                <th class="w-50">ID</th>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <th>Job Name</th>
+                                <td>Interior Designer</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- #endregion Body -->
+
+                <!-- #region Footer -->
+                <div class="modal-footer">
+                    <!-- Submit & Button -->
+                    <button type="submit" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editJobModal-3">Edit Details</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+                <!-- #endregion Footer -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Job Details-3) -->
+
+    <!-- #region Modal (Job Details-4) -->
+    <div class="modal fade" id="jobDetailsModal-4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Job Details</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body p-0">
+                    <table class="table table-bordered small mb-0">
+                        <tbody class="align-middle">
+                            <tr>
+                                <th class="w-50">ID</th>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <th>Job Name</th>
+                                <td>Web Developer</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- #endregion Body -->
+
+                <!-- #region Footer -->
+                <div class="modal-footer">
+                    <!-- Submit & Button -->
+                    <button type="submit" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editJobModal-4">Edit Details</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+                <!-- #endregion Footer -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Job Details-4) -->
+
+    <!-- #region Modal (Job Details-5) -->
+    <div class="modal fade" id="jobDetailsModal-5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Job Details</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body p-0">
+                    <table class="table table-bordered small mb-0">
+                        <tbody class="align-middle">
+                            <tr>
+                                <th class="w-50">ID</th>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <th>Job Name</th>
+                                <td>PHP Developer</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- #endregion Body -->
+
+                <!-- #region Footer -->
+                <div class="modal-footer">
+                    <!-- Submit & Button -->
+                    <button type="submit" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editJobModal-5">Edit Details</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+                <!-- #endregion Footer -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Job Details-5) -->
+
+    <!-- #region Modal (Job Details-6) -->
+    <div class="modal fade" id="jobDetailsModal-6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Job Details</h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body p-0">
+                    <table class="table table-bordered small mb-0">
+                        <tbody class="align-middle">
+                            <tr>
+                                <th class="w-50">ID</th>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <th>Job Name</th>
+                                <td>Digital Marketer</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- #endregion Body -->
+
+                <!-- #region Footer -->
+                <div class="modal-footer">
+                    <!-- Submit & Button -->
+                    <button type="submit" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editJobModal-6">Edit Details</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+                <!-- #endregion Footer -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Job Details-6) -->
+
+
+    <!-- #region Modal (Edit Job-1) -->
+    <div class="modal fade" id="editJobModal-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Job Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body">
+                    <form>
+                        <!-- Date Input -->
+                        <div class="mb-3">
+                            <input type="date" class="form-control" value="2022-07-19">
+                        </div>
+                        <!-- Job Name Input -->
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Job Name" value="Graphic Designer">
+                        </div>
+                        <!-- Submit & Button -->
+                        <div class="d-flex gap-3">
+                            <button type="submit" class="btn btn-success flex-fill">Update Job</button>
+                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- #endregion Body -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Edit Job-1) -->
+
+    <!-- #region Modal (Edit Job-2) -->
+    <div class="modal fade" id="editJobModal-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Job Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body">
+                    <form>
+                        <!-- Date Input -->
+                        <div class="mb-3">
+                            <input type="date" class="form-control" value="2022-07-19">
+                        </div>
+                        <!-- Job Name Input -->
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Job Name" value="Web Designer">
+                        </div>
+                        <!-- Submit & Button -->
+                        <div class="d-flex gap-3">
+                            <button type="submit" class="btn btn-success flex-fill">Update Job</button>
+                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- #endregion Body -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Edit Job-2) -->
+
+    <!-- #region Modal (Edit Job-3) -->
+    <div class="modal fade" id="editJobModal-3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Job Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body">
+                    <form>
+                        <!-- Date Input -->
+                        <div class="mb-3">
+                            <input type="date" class="form-control" value="2022-07-19">
+                        </div>
+                        <!-- Job Name Input -->
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Job Name" value="Interior Designer">
+                        </div>
+                        <!-- Submit & Button -->
+                        <div class="d-flex gap-3">
+                            <button type="submit" class="btn btn-success flex-fill">Update Job</button>
+                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- #endregion Body -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Edit Job-3) -->
+
+    <!-- #region Modal (Edit Job-4) -->
+    <div class="modal fade" id="editJobModal-4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Job Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body">
+                    <form>
+                        <!-- Date Input -->
+                        <div class="mb-3">
+                            <input type="date" class="form-control" value="2022-07-19">
+                        </div>
+                        <!-- Job Name Input -->
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Job Name" value="Web Developer">
+                        </div>
+                        <!-- Submit & Button -->
+                        <div class="d-flex gap-3">
+                            <button type="submit" class="btn btn-success flex-fill">Update Job</button>
+                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- #endregion Body -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Edit Job-4) -->
+
+    <!-- #region Modal (Edit Job-5) -->
+    <div class="modal fade" id="editJobModal-5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Job Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body">
+                    <form>
+                        <!-- Date Input -->
+                        <div class="mb-3">
+                            <input type="date" class="form-control" value="2022-07-19">
+                        </div>
+                        <!-- Job Name Input -->
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Job Name" value="PHP Developer">
+                        </div>
+                        <!-- Submit & Button -->
+                        <div class="d-flex gap-3">
+                            <button type="submit" class="btn btn-success flex-fill">Update Job</button>
+                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- #endregion Body -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Edit Job-5) -->
+
+    <!-- #region Modal (Edit Job-6) -->
+    <div class="modal fade" id="editJobModal-6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header text-bg-dark">
+                    <h5 class="modal-title fs-5">Job Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+
+                <!-- #region Body -->
+                <div class="modal-body">
+                    <form>
+                        <!-- Date Input -->
+                        <div class="mb-3">
+                            <input type="date" class="form-control" value="2022-07-19">
+                        </div>
+                        <!-- Job Name Input -->
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Job Name" value="Digital Marketer">
+                        </div>
+                        <!-- Submit & Button -->
+                        <div class="d-flex gap-3">
+                            <button type="submit" class="btn btn-success flex-fill">Update Job</button>
+                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- #endregion Body -->
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Edit Job-6) -->
+
+
+    <!-- #region Modal (Delete Job-1) -->
+    <div class="modal fade" id="deleteJobModal-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header">
+                    <label class="modal-title fs-5 fw-light text-center">Do you want to delete the Job <b>"Graphic Designer"</b> ?</label>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+                
+                <form>
+                    <!-- #region Footer -->
+                    <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-danger">YES</button>
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Nope, Go back</button>
+                    </div>
+                    <!-- #endregion Footer -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Delete Job-1) -->
+
+    <!-- #region Modal (Delete Job-2) -->
+    <div class="modal fade" id="deleteJobModal-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header">
+                    <label class="modal-title fs-5 fw-light text-center">Do you want to delete the Job <b>"Web Designer"</b> ?</label>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+                
+                <form>
+                    <!-- #region Footer -->
+                    <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-danger">YES</button>
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Nope, Go back</button>
+                    </div>
+                    <!-- #endregion Footer -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Delete Job-2) -->
+
+    <!-- #region Modal (Delete Job-3) -->
+    <div class="modal fade" id="deleteJobModal-3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header">
+                    <label class="modal-title fs-5 fw-light text-center">Do you want to delete the Job <b>"Interior Designer"</b> ?</label>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+                
+                <form>
+                    <!-- #region Footer -->
+                    <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-danger">YES</button>
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Nope, Go back</button>
+                    </div>
+                    <!-- #endregion Footer -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Delete Job-3) -->
+
+    <!-- #region Modal (Delete Job-4) -->
+    <div class="modal fade" id="deleteJobModal-4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header">
+                    <label class="modal-title fs-5 fw-light text-center">Do you want to delete the Job <b>"Web Developer"</b> ?</label>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+                
+                <form>
+                    <!-- #region Footer -->
+                    <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-danger">YES</button>
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Nope, Go back</button>
+                    </div>
+                    <!-- #endregion Footer -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Delete Job-4) -->
+
+    <!-- #region Modal (Delete Job-5) -->
+    <div class="modal fade" id="deleteJobModal-5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header">
+                    <label class="modal-title fs-5 fw-light text-center">Do you want to delete the Job <b>"PHP Developer"</b> ?</label>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+                
+                <form>
+                    <!-- #region Footer -->
+                    <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-danger">YES</button>
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Nope, Go back</button>
+                    </div>
+                    <!-- #endregion Footer -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Delete Job-5) -->
+
+    <!-- #region Modal (Delete Job-6) -->
+    <div class="modal fade" id="deleteJobModal-6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- #region Header -->
+                <div class="modal-header">
+                    <label class="modal-title fs-5 fw-light text-center">Do you want to delete the Job <b>"Digital Marketer"</b> ?</label>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- #endregion Header -->
+                
+                <form>
+                    <!-- #region Footer -->
+                    <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-danger">YES</button>
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Nope, Go back</button>
+                    </div>
+                    <!-- #endregion Footer -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Modal (Delete Job-6) -->
+
+    <script src="https://cdn.jsdelivr.xyz/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+.brandGradient {
+    background: #218fcf;
+    background: linear-gradient(to right, #218fcf 0%, #86cf46 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.modal {
+    backdrop-filter: blur(5px);
+}
+
+.brandGradient:hover {
+    background: rgb(224, 224, 102);
+    background: linear-gradient(to right, rgb(224, 224, 102) 0%, white 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

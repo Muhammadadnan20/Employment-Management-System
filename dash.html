@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.xyz/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-light">
+
+    <!-- #region Navbar -->
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand brandGradient fs-4" href="dash.html">EMS2.0</a>
+            <!-- #region Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- #endregion Toggler -->
+            <div class="collapse navbar-collapse small" id="navbarSupportedContent">
+                <!-- #region Navbar Items -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="dash.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="employees.html">Employees</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="jobs.html">Jobs</a>
+                    </li>
+                </ul>
+                <form class="d-flex gap-3" role="search">
+                    <div class="input-group">
+                        <input type="search" class="form-control" placeholder="Search for...">
+                        <button class="btn btn-success" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                    <div class="vr text-white"></div>
+                    <button class="btn btn-warning" type="button">
+                        <a href="index.html" class="text-black"><i class="fa-solid fa-power-off"></i></a>
+                    </button>
+                </form>
+                <!-- #endregion Navbar Items -->
+            </div>
+        </div>
+    </nav>
+    <!-- #endregion Navbar -->
+
+    <!-- #region Cards -->
+    <div class="container-fluid mt-4">
+        <div class="row justify-content-center">
+            <!-- Card 1 -->
+            <div class="col-md-3">
+                <div class="card text-bg-primary mb-3 shadow text-center">
+                    <div class="card-header">Employees List</div>
+                    <div class="card-body"><label class="card-text fs-1">10+</label></div>
+                    <div class="card-footer small px-0">
+                        <a href="employees.html" class="d-block text-decoration-none text-white">View all employees</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-md-3">
+                <div class="card text-bg-primary mb-3 shadow text-center">
+                    <div class="card-header">Jobs List</div>
+                    <div class="card-body"><label class="card-text fs-1">6+</label></div>
+                    <div class="card-footer small px-0">
+                        <a href="jobs.html" class="d-block text-decoration-none text-white">View all jobs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Cards -->
+    
+    <script src="https://cdn.jsdelivr.xyz/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
